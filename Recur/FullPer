@@ -1,0 +1,19 @@
+public static void fullPer(List<Integer> tmp,List<List<Integer>> res,int[] arr){
+        if(arr.length==0) {
+            ArrayList tmp2 = (ArrayList) tmp;
+            res.add((List<Integer>) tmp2.clone());
+        }
+        for(int i=0;i< arr.length;i++){
+            int[] arr2 = new int[arr.length-1];
+            int index = 0;
+            for(int j=0;j<arr.length;j++){
+                if(i!=j) {
+                    arr2[index++] = arr[j];
+                }else{
+                    tmp.add(arr[i]);
+                }
+            }
+            fullPer(tmp,res,arr2);
+            if(tmp.size()>0) tmp.remove(tmp.size()-1);
+        }
+    }
