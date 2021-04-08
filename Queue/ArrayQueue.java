@@ -13,7 +13,7 @@ public class ArrayQueue {
             arr[b] = x;
         }
     }
-    public int pop(){
+    public int poll(){
         int tmp = b;
         b = (b-1)%arr.length;
         return arr[tmp];
